@@ -1,0 +1,35 @@
+/* CSS Reset */
+#element { margin:0; padding:0; font-size:100%; line-height:1; }
+body {
+background-color: rgba(198, 196, 196, 0.98);
+}
+#todo-title{
+    font-size: 76px!important;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(161, 159, 159);
+}
+.todo-container{
+    width:800px; 
+    margin:0 auto;
+}
+.todo-input{
+    margin: 0 auto;
+}
+.todo-name{
+    font-family: cursive;
+}
+.todo-text{
+    font-family: inherit;
+}
+.todolist-div{
+    border-top: 20px solid #675757;
+    border-bottom: 1px solid #675757;
+    border-left: 1px solid #675757;
+    border-right: 1px solid #675757;
+}
+.list-entry{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
