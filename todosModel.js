@@ -14,20 +14,18 @@ var TodoSchema = new Schema({
 module.exports = mongoose.model('Todos', TodoSchema);
 
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var PersonDetilsSchema = new Schema({
-	_id:{
-		type: Number,
-		required: true,
-	},
-	name: {
-		type: String,
-		required: 'Please enter name'
-	},
-	email: {
-		type: String,
-		required: 'please enter email'
-	}
-});
-module.exports = mongoose.model('PersonDetails', PersonDetilsSchema);
+// var PersonDetilsSchema = new Schema({
+// 	_id:{
+// 		type: Number,
+// 		required: true,
+// 	},
+// 	name: {
+// 		type: String,
+// 		required: 'Please enter name'
+// 	},
+// 	email: {
+// 		type: String,
+// 		required: 'please enter email'
+// 	}
+// });
+// module.exports = mongoose.model('PersonDetails', PersonDetilsSchema);
