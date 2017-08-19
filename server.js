@@ -45,6 +45,7 @@ app.post('/api/todos', function(req,res){
 		});
 	});
 });
+
 app.delete('/api/todos/:id', function(req,res){
 	Todos.remove({
 		_id: req.params.id
@@ -58,7 +59,6 @@ app.delete('/api/todos/:id', function(req,res){
 		});
 	});
 });
-
 app.put('/api/todos/:id', function(req,res){
 	Todos.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}, function(err, todos){
 		if(err)

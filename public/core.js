@@ -2,17 +2,12 @@ var app = angular.module('todoApp',[]);
 
 app.controller('todoListController',['$scope', '$http', function($scope, $http){
 	$scope.formData = {};
-	$scope.ids = {};
+	$scope.ids = [];
 	$http.get('/api/todos').success(function(data){
 		$scope.todos = data;
 		console.log(data);
+		
 	});
-	// $http.get('/todos').success(function(data){
-	// 	$scope.todos = data;
-	// })
-	// .error(function(data){
-	// 	console.log('Error : ' + data);
-	// });
 
 	$scope.createTodo = function(){
 		 if($scope.formData.name != undefined){
@@ -28,13 +23,21 @@ app.controller('todoListController',['$scope', '$http', function($scope, $http){
 		$http.delete('/api/todos/'+ id).success(function(data){
 			$scope.todos = data;
 		});
-
 	}
 	$scope.updateTodo = function(id){
 		$scope.formData.created_date = Date();
 		$http.put('/api/todos/'+ id, $scope.formData).success(function(data){
 			$scope.formData = {};
 			$scope.todos = data;
+		});
+	}
+	$scope.deleteTodos = function(){
+		let idArray = Object.keys($scope.ids);
+		idArray.forEach(function(id){
+			$http.delete('/api/todos/' + id).success(function(data){
+				 $scope.todos = data;
+				console.log(data);
+			});
 		});
 	}
 }]);
